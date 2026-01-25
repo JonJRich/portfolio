@@ -1,0 +1,42 @@
+---
+layout: default
+---
+
+<section class="hero-section">
+  <h1 class="hero-title">{{ site.title }}</h1>
+  <p class="hero-bio">{{ site.description }}</p>
+</section>
+
+<section id="work" class="work-section">
+  <h2 class="section-label">WORK</h2>
+  <div class="work-grid">
+    {% for project in site.work %}
+    <article class="work-card">
+      {% if project.image %}
+      <div class="work-image">
+        <img src="{{ project.image | relative_url }}" alt="{{ project.title }}">
+      </div>
+      {% endif %}
+      <div class="work-content">
+        <h3 class="work-title">{{ project.title }}</h3>
+        <p class="work-description">{{ project.description }}</p>
+        <a href="{{ project.url | relative_url }}" class="work-button">OPEN</a>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section id="writing" class="writing-section">
+  <h2 class="section-label">WRITING</h2>
+  <ul class="writing-list">
+    {% for post in site.posts %}
+    <li class="writing-item">
+      <a href="{{ post.url | relative_url }}" class="writing-link">
+        <span class="writing-title">{{ post.title }}</span>
+        <span class="writing-date">{{ post.date | date: "%Y-%m-%d" }}</span>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</section>

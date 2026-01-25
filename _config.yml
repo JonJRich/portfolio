@@ -1,0 +1,24 @@
+# Site settings
+title: Your Name
+description: Lead Frontend Engineer. Building thoughtful digital experiences.
+url: ""
+baseurl: ""
+
+# Collections
+collections:
+  work:
+    output: true
+    permalink: /work/:title/
+
+# Google Fonts
+google_fonts: "IBM+Plex+Mono:400,500,600"
+
+# Build settings
+markdown: kramdown
+permalink: /writing/:year/:month/:day/:title/
+
+# Exclude
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
