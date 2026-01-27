@@ -32,13 +32,19 @@ body {
 /* ========================================
    Typography
    ======================================== */
-h1, h2, h3, h4, h5, h6 {
+   h1 {
+    font-family: 'Quantico', sans-serif;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+   h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   line-height: 1.2;
   margin-bottom: 1rem;
 }
 
-h1 { font-size: 32px; }
+h1 { font-size: 48px; }
 h2 { font-size: 24px; }
 h3 { font-size: 18px; }
 
@@ -122,6 +128,7 @@ a:hover {
 }
 
 .hero-title {
+  font-family: 'Quantico', sans-serif;
   font-size: 48px;
   font-weight: 600;
   margin-bottom: 1rem;

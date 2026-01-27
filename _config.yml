@@ -11,7 +11,7 @@ collections:
     permalink: /work/:title/
 
 # Google Fonts
-google_fonts: "IBM+Plex+Mono:400,500,600"
+google_fonts: "IBM+Plex+Mono:400,500,600|Quantico:400,700"
 
 # Build settings
 markdown: kramdown
