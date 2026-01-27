@@ -23,6 +23,30 @@ layout: default
         <a href="{{ project.url | relative_url }}" class="work-button">OPEN</a>
       </div>
     </article>
+    <article class="work-card">
+      {% if project.image %}
+      <div class="work-image">
+        <img src="{{ project.image | relative_url }}" alt="{{ project.title }}">
+      </div>
+      {% endif %}
+      <div class="work-content">
+        <h3 class="work-title">{{ project.title }}</h3>
+        <p class="work-description">{{ project.description }}</p>
+        <a href="{{ project.url | relative_url }}" class="work-button">OPEN</a>
+      </div>
+    </article>
+    <article class="work-card">
+      {% if project.image %}
+      <div class="work-image">
+        <img src="{{ project.image | relative_url }}" alt="{{ project.title }}">
+      </div>
+      {% endif %}
+      <div class="work-content">
+        <h3 class="work-title">{{ project.title }}</h3>
+        <p class="work-description">{{ project.description }}</p>
+        <a href="{{ project.url | relative_url }}" class="work-button">OPEN</a>
+      </div>
+    </article>
     {% endfor %}
   </div>
 </section>
