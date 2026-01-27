@@ -99,7 +99,7 @@ a:hover {
 .main-content {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 4rem 2rem;
+  padding: 0 2rem 4rem 2rem;
   min-height: calc(100vh - 200px);
 }
 
@@ -117,6 +117,7 @@ a:hover {
    Homepage - Hero
    ======================================== */
 .hero-section {
+  margin-top: 4rem;
   margin-bottom: 6rem;
 }
 
@@ -291,7 +292,7 @@ a:hover {
 }
 
 .post-hero {
-  margin: -2rem 0 3rem 0;
+  margin: 2rem 0 3rem 0;
   border: var(--border-width) solid var(--border-color);
   border-radius: var(--border-radius);
   overflow: hidden;
@@ -305,6 +306,7 @@ a:hover {
 }
 
 .post-header {
+  margin-top: 4rem;
   margin-bottom: 3rem;
 }
 

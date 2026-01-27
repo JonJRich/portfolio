@@ -1,8 +1,8 @@
 # Site settings
 title: Your Name
 description: Lead Frontend Engineer. Building thoughtful digital experiences.
-url: "https://jonjrich.github.io"
-baseurl: "/portfolio"
+url: ""
+baseurl: ""
 
 # Collections
 collections:
