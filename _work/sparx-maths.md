@@ -1,14 +1,14 @@
 ---
 layout: post
 title: "Sparx Maths & Science"
-description: "Two experiments at massive scale. Five million students, 700 questions a minute. One worked brilliantly, one failed in an interesting way."
+description: "Two experiments at massive scale. Five thousand students, 700 questions a minute. One worked brilliantly, one failed in an interesting way."
 date: 2026-01-14
 categories: work
 image: /assets/images/SparxMathsScience-Hero.png
 hero_image: /assets/images/SparxMathsScience-Hero.png
 ---
 
-Five million students. 700 questions answered every minute at peak. Small changes at this scale have outsized impact.
+Five thousand students. 700 questions answered every minute at peak. Small changes at this scale have outsized impact.
 
 ## Getting students to skip questions (Sparx Revision)
 
