@@ -551,9 +551,8 @@ a:hover {
 .post-content img {
   max-width: 100%;
   height: auto;
-  border: var(--border-width) solid var(--border-color);
-  border-radius: var(--border-radius);
-  margin: 2rem 0;
+  margin: 1rem 0;
+  display: block;
 }
 
 .post-footer {
