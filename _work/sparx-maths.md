@@ -4,8 +4,8 @@ title: "Sparx Maths"
 description: "Two experiments at massive scale. Five million students, 700 questions a minute. One worked brilliantly, one failed in an interesting way."
 date: 2026-01-14
 categories: work
-image: /assets/images/metric-dashboard-thumb.jpg
-hero_image: /assets/images/metric-dashboard-hero.jpg
+image: /assets/images/vincent-roman-dZ_RZiMc6s0-unsplash.jpg
+hero_image: /assets/images/vincent-roman-dZ_RZiMc6s0-unsplash.jpg
 ---
 
 Five million students. 700 questions answered every minute at peak. Small changes at this scale have outsized impact.

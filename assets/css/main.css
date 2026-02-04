@@ -149,6 +149,48 @@ a:hover {
   padding: 0 0.25rem;
 }
 
+.highlight-animate {
+  position: relative;
+  display: inline;
+  color: var(--text-color);
+  padding: 0 0.25rem;
+  background: linear-gradient(to right, rgba(255, 92, 0, 0.2) 0%, rgba(255, 92, 0, 0.2) 100%);
+  background-size: 0% 100%;
+  background-repeat: no-repeat;
+}
+
+.highlight-animate.animate {
+  animation: paintHighlight 1.2s ease-out forwards;
+}
+
+.highlight-animate.animate[data-delay="0"] {
+  animation-duration: 2.4s;
+  animation-delay: 0s;
+}
+
+.highlight-animate.animate[data-delay="1"] {
+  animation-duration: 1.5s;
+  animation-delay: 2.4s;
+}
+
+.highlight-animate.animate[data-delay="2"] {
+  animation-duration: 4.5s;
+  animation-delay: 3.9s;
+}
+
+.highlight-animate.no-animate {
+  background-size: 100% 100%;
+}
+
+@keyframes paintHighlight {
+  from {
+    background-size: 0% 100%;
+  }
+  to {
+    background-size: 100% 100%;
+  }
+}
+
 /* ========================================
    Section Labels
    ======================================== */

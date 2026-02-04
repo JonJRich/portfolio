@@ -31,5 +31,14 @@
   <footer class="site-footer">
     <p>&copy; {{ 'now' | date: "%Y" }} {{ site.title }}</p>
   </footer>
+
+  <script>
+    if (!sessionStorage.getItem('highlightsPlayed')) {
+      document.querySelectorAll('.highlight-animate').forEach(el => el.classList.add('animate'));
+      sessionStorage.setItem('highlightsPlayed', 'true');
+    } else {
+      document.querySelectorAll('.highlight-animate').forEach(el => el.classList.add('no-animate'));
+    }
+  </script>
 </body>
 </html>
