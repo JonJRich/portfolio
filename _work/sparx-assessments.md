@@ -16,6 +16,6 @@ To achieve this we pored over every flow, questioning the cognitive load we were
 
 In the first term, teachers from over 400 schools entered exam data for over 50,000 students. Building the foundations for the UK's largest GCSE mocks dataset. Something our competitors could only dream of.
 
-![Assessments interface]({{ '/assets/images/Assessments-1.png' | relative_url }})
+![Assessments interface](/assets/images/Assessments-1.png)
 
-![Assessments interface]({{ '/assets/images/Assessments-2.png' | relative_url }})
+![Assessments interface](/assets/images/Assessments-2.png)

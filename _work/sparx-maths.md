@@ -18,7 +18,7 @@ Five years of homework conditioning was the culprit. In homework mode, 100% comp
 
 We added an explicit 'Skip' button to make the option visible and deliberate. After two wrong attempts, we showed a nudge: "In exams, it's ok to move-on."
 
-![Sparx Maths interface]({{ '/assets/images/SparxMathsScience-Maths.png' | relative_url }})
+![Sparx Maths interface](/assets/images/SparxMathsScience-Maths.png)
 
 ## Vertical sorting UI (Sparx Science)
 
@@ -30,4 +30,4 @@ The impact: Correct first answers dropped 0.06%.
 
 Unexpected, but it made sense when I dug into it. The smoother UI lowered the barrier to guessing. Students were taking quicker shots instead of thinking it through first. This was confirmed by an increase in correct second attempts. They were still learning from their mistakes, just one step later in the process.
 
-![Sparx Science interface]({{ '/assets/images/SparxMathsScience-Science.png' | relative_url }})
+![Sparx Science interface](/assets/images/SparxMathsScience-Science.png)
