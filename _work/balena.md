@@ -14,10 +14,10 @@ I rebuilt balenaHub's interface, making it easier for developers to discover and
 
 Working in a B2B startup meant getting close to the users. I joined support shifts to hear frustrations firsthand. Ran research sessions to understand what developers actually needed. Then used those insights to make decisions across marketing sites, web applications, and everything in between.
 
-![balena screenshot 1](/assets/images/balena-1.png)
+![balena screenshot 1]({{ '/assets/images/balena-1.png' | relative_url }})
 
-![balena screenshot 2](/assets/images/balena-2.png)
+![balena screenshot 2]({{ '/assets/images/balena-2.png' | relative_url }})
 
-![balena screenshot 3](/assets/images/balena-3.png)
+![balena screenshot 3]({{ '/assets/images/balena-3.png' | relative_url }})
 
-![balena screenshot 4](/assets/images/balena-4.png)
+![balena screenshot 4]({{ '/assets/images/balena-4.png' | relative_url }})
