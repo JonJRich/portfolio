@@ -16,9 +16,7 @@ The problem: Students were grinding away at difficult questions, attempting them
 
 Five years of homework conditioning was the culprit. In homework mode, 100% completion mattered. In revision mode, knowing when to move on matters more.
 
-We added an explicit 'Skip' button to make the option visible and deliberate. After two wrong attempts, we showed a nudge: "In an exam, you can always skip tough questions and come back later."
-
-The result: 11% more students attempted all questions in their revision tasks, with a 4.8% increase in correct answers.
+We added an explicit 'Skip' button to make the option visible and deliberate. After two wrong attempts, we showed a nudge: "In exams, it's ok to move-on."
 
 ![Sparx Maths interface]({{ '/assets/images/SparxMathsScience-Maths.png' | relative_url }})
 
