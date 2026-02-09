@@ -26,14 +26,13 @@ This was the ambition of Sparx Assessments.
 
 ---
 
-![Assessments interface](/assets/images/Assessments-6.png)
-
 ## The starting point wasn't pretty
 
 Sparx already had a proof-of-concept for assessments buried inside Sparx Maths. A handful of schools had tested it. Their appetite was large enough that we spun up a team to pull it out and build it properly.
 
 I led the design.
 
+![Assessments interface](/assets/images/Assessments-6.png)
 
 ---
 
