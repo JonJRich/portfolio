@@ -19,3 +19,9 @@ In the first term, teachers from over 400 schools entered exam data for over 50,
 ![Assessments interface](/assets/images/Assessments-1.png)
 
 ![Assessments interface](/assets/images/Assessments-2.png)
+
+![Assessments interface](/assets/images/Assessments-3.png)
+
+![Assessments interface](/assets/images/Assessments-4.png)
+
+![Assessments interface](/assets/images/Assessments-5.png)
