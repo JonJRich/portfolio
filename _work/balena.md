@@ -21,3 +21,9 @@ Working in a B2B startup meant getting close to the users. I joined support shif
 ![balena screenshot 3](/assets/images/balena-3.png)
 
 ![balena screenshot 4](/assets/images/balena-4.png)
+
+## Jellyfish
+
+I led both design and engineering for Jellyfish, balena's internal comms tool. Managed a team of six engineers and took it from concept through to launch. It's one thing to design for customers, but building something your own team actually wants to use? That's a different challenge entirely.
+
+![Jellyfish interface](/assets/images/jellyfish-1.png)
