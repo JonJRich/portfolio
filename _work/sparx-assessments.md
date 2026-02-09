@@ -24,9 +24,9 @@ With teachers already stretched thin, any new tool must do more than save timeâ€
 
 This was the ambition of Sparx Assessments.
 
-![Assessments interface](/assets/images/Assessments-6.png)
-
 ---
+
+![Assessments interface](/assets/images/Assessments-6.png)
 
 ## The starting point wasn't pretty
 
@@ -50,13 +50,14 @@ Dig deeper and there's more: teachers see **Assessments** (entering marks, analy
 So we split them. Completely separate areas of the product to match how teachers actually think.
 
 ![Assessments interface](/assets/images/Assessments-7.png)
+
 ---
 
 ## Every click had to earn its place
 
 Teachers are time-poor. Countless priorities compete for their attention. Sparx Assessments couldn't demand more cognitive load than absolutely necessary.
 
-We pored over every flow. Broke setup into 5 simple steps, no more than 3 fields each.
+We pored over every flow. Broke setup into 4 simple steps, no more than 3 fields each.
 
 ![Assessments interface](/assets/images/Assessments-3.png)
 
@@ -85,6 +86,7 @@ The tight loop caught issues early. Users wanted to click marksheet cells instea
 I used NotebookLM to synthesize sessionsâ€”creating a resource the whole team could query, from senior stakeholders to junior engineers.
 
 ![Assessments interface](/assets/images/Assessments-8.png)
+
 ---
 
 ## 450 schools, September 2024
@@ -99,8 +101,8 @@ One Trust Lead told us:
 
 We pulled forward the Mock 1 launch by two weeks because schools wanted it sooner.
 
-![Assessments interface](/assets/images/Assessments-1.png)
+![Assessments interface](/assets/images/Assessments-5.png)
 
 ![Assessments interface](/assets/images/Assessments-4.png)
 
-![Assessments interface](/assets/images/Assessments-5.png)
+![Assessments interface](/assets/images/Assessments-1.png)
