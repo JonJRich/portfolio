@@ -76,7 +76,7 @@ We extended Sparx's design system but gave Assessments its own visual weight. It
 
 ## Test, learn, repeat
 
-I embedded continuous testing throughout the build. Every two weeks: new prototype, new round of sessions.
+I embedded continuous testing throughout the build. Every two weeks: new prototype, new round of sessions. Peaking at 25 sessions in a single fortnight.
 
 Sometimes with the same teachers to see if fixes worked. Sometimes with new ones to catch blind spots.
 
