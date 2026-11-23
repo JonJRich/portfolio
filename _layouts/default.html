@@ -334,8 +334,12 @@
         el.addEventListener("focus", function () { to(big); });
         el.addEventListener("blur", function () { to(rest); });
       }
-      grow(".nav-link", "z-lift-btn");
-      grow(".tx-item--lead .tx-row", "z-lift-card");
+      /* Safari loses the whole element while the glow's blur is being changed,
+         so it keeps a steady glow there and only the hover tint changes. */
+      if (!document.documentElement.classList.contains("is-webkit")) {
+        grow(".nav-link", "z-lift-btn");
+        grow(".tx-item--lead .tx-row", "z-lift-card");
+      }
     })();
   </script>
   {%- if page.url == "/" %}
