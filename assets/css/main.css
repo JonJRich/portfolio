@@ -2140,7 +2140,6 @@ html[data-layout="text"] .tx-preview {
   width: min(20rem, 62vw);
   aspect-ratio: 16 / 9;
   pointer-events: none;
-  will-change: transform;
 }
 .tx-preview-card {
   position: relative;
@@ -2154,21 +2153,17 @@ html[data-layout="text"] .tx-preview {
     0 2px 4px rgba(39, 43, 40, 0.06),
     0 18px 40px -12px rgba(39, 43, 40, 0.28);
   opacity: 0;
-  transform: scale(0.9);
-  filter: blur(6px);
+  translate: 0 6px;
   transition:
     opacity 160ms var(--tx-ease-soft),
-    transform 200ms var(--tx-ease-soft),
-    filter 160ms var(--tx-ease-soft);
+    translate 200ms var(--tx-ease-soft);
 }
 .tx-preview.is-on .tx-preview-card {
   opacity: 1;
-  transform: none;
-  filter: none;
+  translate: 0 0;
   transition:
     opacity 220ms var(--tx-ease-soft),
-    transform 420ms var(--tx-ease),
-    filter 220ms var(--tx-ease-soft);
+    translate 420ms var(--tx-ease);
 }
 .tx-preview img {
   position: absolute;

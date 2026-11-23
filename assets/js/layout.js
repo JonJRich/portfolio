@@ -307,8 +307,12 @@
       card.style.transformOrigin = ox + " " + oy;
     }
 
+    /* Snap to whole device pixels: a layer sitting between pixels gets resampled,
+       which makes the screenshot in the card look soft or jagged. */
     function paint() {
-      box.style.transform = "translate3d(" + x.toFixed(2) + "px," + y.toFixed(2) + "px,0)";
+      var d = window.devicePixelRatio || 1;
+      var px = Math.round(x * d) / d, py = Math.round(y * d) / d;
+      box.style.transform = "translate(" + px + "px," + py + "px)";
     }
 
     function tick() {
