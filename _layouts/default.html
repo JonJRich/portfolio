@@ -14,7 +14,16 @@
   {%- assign share_dek = page.description | default: site_dek | strip_html | strip -%}
   {%- if page.url == "/" %}{% assign share_dek = site_dek %}{% endif %}
   <link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="32x32">
-  <link rel="icon" type="image/svg+xml" href="{{ '/assets/favicon.svg' | relative_url }}">
+  <link rel="icon" type="image/svg+xml" href="{{ '/assets/favicon.svg' | relative_url }}" id="favicon">
+  <script>
+    /* The favicon is a dot in the reader's chosen ink (Page printed in…), on every page. */
+    window.jrFavicon = function (h) {
+      if (!/^#[0-9a-f]{6}$/i.test(h || "")) h = "#FF48B0";
+      var link = document.getElementById("favicon");
+      if (link) link.href = "data:image/svg+xml," + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><circle cx="16" cy="16" r="14" fill="' + h + '"/></svg>');
+    };
+    try { jrFavicon(localStorage.getItem("jr-reprint")); } catch (e) {}
+  </script>
   <link rel="apple-touch-icon" href="{{ '/assets/apple-touch-icon.png' | relative_url }}">
 
   <link rel="canonical" href="{{ page.url | absolute_url }}">
@@ -38,7 +47,7 @@
   <link rel="preload" href="{{ '/assets/fonts/ibm-plex-mono-latin-500-normal.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="{{ '/assets/fonts/ibm-plex-mono-latin-400-normal.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
 
-  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}?v=35">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}?v=36">
   {%- unless page.layout == "case-study" %}
   <script>
     /* Reprint this page in…: the site's accent, from a set of riso inks. Picked in
@@ -62,6 +71,7 @@
         return c.map(function (v) { return v * k; });
       }
       function apply(h) {
+        if (window.jrFavicon) jrFavicon(h);
         if (!h || h.toUpperCase() === DEFAULT) { tokens.forEach(function (t) { root.style.removeProperty(t); }); return; }
         var ink = rgb(h), text = readable(ink);
         root.style.setProperty("--accent", hex(text));

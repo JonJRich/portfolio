@@ -2137,7 +2137,7 @@ html[data-layout="text"] .tx-preview {
   z-index: 45;
   top: 0;
   left: 0;
-  width: min(20rem, 62vw);
+  width: min(28rem, 62vw);
   aspect-ratio: 16 / 9;
   pointer-events: none;
 }
