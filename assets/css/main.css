@@ -2773,3 +2773,13 @@ html[data-layout="text"] .blog-hero + .blog-post-body { margin-top: 2rem; }
 .page-404 .section-kicker { margin-bottom: 0.9rem; }
 .page-404-link { margin: 2rem 0 clamp(4rem, 12vw, 8rem); }
 .page-404-link .nav-link { display: inline-block; text-decoration: none; }
+
+/* Safari (Mac and iPhone) drops the Contact button entirely when the halftone SVG filter
+   is applied inside the fixed header. Touch screens have no hover to grow the
+   glow anyway, so they get the same tinted pill without the filter. */
+@media (hover: none) {
+  html[data-zine] .nav-link,
+  html[data-zine] .nav-link:is(:hover, :focus-visible) { filter: none; }
+}
+html.is-webkit[data-zine] .nav-link,
+html.is-webkit[data-zine] .nav-link:is(:hover, :focus-visible) { filter: none; }

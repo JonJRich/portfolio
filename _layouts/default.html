@@ -16,6 +16,11 @@
   <link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="32x32">
   <link rel="icon" type="image/svg+xml" href="{{ '/assets/favicon.svg' | relative_url }}" id="favicon">
   <script>
+    /* Safari and every iPhone browser (all WebKit) can't draw the halftone glow
+       inside the fixed header: the Contact button vanishes. Flag them before paint. */
+    if (navigator.vendor === "Apple Computer, Inc.") document.documentElement.classList.add("is-webkit");
+  </script>
+  <script>
     /* The favicon is a dot in the reader's chosen ink (Page printed in…), on every page. */
     window.jrFavicon = function (h) {
       if (!/^#[0-9a-f]{6}$/i.test(h || "")) h = "#FF48B0";
@@ -47,7 +52,7 @@
   <link rel="preload" href="{{ '/assets/fonts/ibm-plex-mono-latin-500-normal.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="{{ '/assets/fonts/ibm-plex-mono-latin-400-normal.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
 
-  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}?v=36">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}?v=38">
   {%- unless page.layout == "case-study" %}
   <script>
     /* Reprint this page in…: the site's accent, from a set of riso inks. Picked in
