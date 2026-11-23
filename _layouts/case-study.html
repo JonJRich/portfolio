@@ -101,7 +101,7 @@ layout: default
   {%- if next %}
   <nav class="related" aria-labelledby="next-heading">
     <h2 id="next-heading" class="section-kicker">Next project</h2>
-    <a class="related-link" href="{{ next.url | relative_url }}">
+    <a class="related-link" href="{{ next.url | relative_url }}"{% if next.image %} data-preview="{{ next.image | replace: '.webp', '-thumb.webp' | relative_url }}"{% endif %}>
       <div class="related-media">
         <img
           src="{% if site.placeholders and next.placeholders != false %}{{ '/assets/images/placeholder.svg' | relative_url }}{% else %}{{ next.image | relative_url }}{% endif %}"

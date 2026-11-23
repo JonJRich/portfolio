@@ -16,7 +16,7 @@
       {%- assign n = forloop.index | prepend: "0" | slice: -2, 2 -%}
       {%- assign minutes = project.reading_time | split: " " | first -%}
       <li class="tx-item{% if forloop.first %} tx-item--lead{% endif %}" data-tx>
-        <a class="tx-row" href="{{ project.url | relative_url }}" data-preview="{% if site.placeholders and project.placeholders != false %}{{ '/assets/images/placeholder.svg' | relative_url }}{% else %}{{ project.image | relative_url }}{% endif %}">
+        <a class="tx-row" href="{{ project.url | relative_url }}" data-preview="{% if site.placeholders and project.placeholders != false %}{{ '/assets/images/placeholder.svg' | relative_url }}{% else %}{{ project.image | replace: '.webp', '-thumb.webp' | relative_url }}{% endif %}">
           <span class="tx-num" aria-hidden="true"><span data-tx-count>{{ n }}</span></span>
           <div class="tx-copy">
             <h3 class="tx-title">{{ project.home_title | default: project.title }}{% unless forloop.first %} <span class="tx-arrow" aria-hidden="true">&rarr;</span>{% endunless %}</h3>
@@ -25,9 +25,6 @@
             <p class="tx-dek">{{ dek }}</p>
             {%- endif %}
             <p class="tx-meta"><span><span data-tx-count>{{ minutes }}</span> min read</span>{%- for skill in project.skills %}<span>{{ skill }}</span>{%- endfor %}</p>
-            {%- if forloop.first %}
-            <p class="tx-cta">Read case study <span class="tx-arrow" aria-hidden="true">&rarr;</span></p>
-            {%- endif %}
           </div>
         </a>
       </li>
@@ -77,7 +74,7 @@
       {%- for post in site.posts %}
       {%- assign minutes = post.reading_time | split: " " | first -%}
       <li class="tx-item" data-tx>
-        <a class="tx-row tx-row--post" href="{{ post.url | relative_url }}"{% if post.image %} data-preview="{{ post.image | relative_url }}"{% endif %}>
+        <a class="tx-row tx-row--post" href="{{ post.url | relative_url }}"{% if post.image %} data-preview="{{ post.image | replace: '.webp', '-thumb.webp' | relative_url }}"{% endif %}>
           <time class="tx-date" datetime="{{ post.date | date: '%Y-%m-%d' }}"><span data-tx-count>{{ post.date | date: "%d" }}</span> {{ post.date | date: "%b" }} <span data-tx-count>{{ post.date | date: "%Y" }}</span></time>
           <div class="tx-copy">
             <h3 class="tx-title">{{ post.title }} <span class="tx-arrow" aria-hidden="true">&rarr;</span></h3>
