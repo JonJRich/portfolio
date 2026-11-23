@@ -2783,3 +2783,8 @@ html[data-layout="text"] .blog-hero + .blog-post-body { margin-top: 2rem; }
 }
 html.is-webkit[data-zine] .nav-link,
 html.is-webkit[data-zine] .nav-link:is(:hover, :focus-visible) { filter: none; }
+/* Safari also loses the highlighted card (on hover) and the key decision cards
+   once the halftone filter repaints, so it shows them with their tint and hairline only. */
+html.is-webkit[data-zine] .tx-item--lead .tx-row,
+html.is-webkit[data-zine] .callout--glow,
+html.is-webkit.tx-js[data-zine][data-layout="text"] .case-body .callout--glow.is-in { filter: none; }
