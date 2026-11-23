@@ -1,0 +1,18 @@
+{%- if site.placeholders and page.placeholders != false -%}
+  {%- assign src = "/assets/images/placeholder.svg" -%}
+  {%- assign alt = "" -%}
+{%- else -%}
+  {%- assign src = include.src -%}
+  {%- assign alt = include.alt -%}
+{%- endif -%}
+<div class="split{% if include.flip %} split--flip{% endif %}">
+  <figure class="split-media">
+    {% include zoom-img.html src=src alt=alt caption=include.caption %}
+    {%- if include.caption %}
+    <figcaption>{{ include.caption }}</figcaption>
+    {%- endif %}
+  </figure>
+  <div class="split-copy">
+    {{ include.text | markdownify }}
+  </div>
+</div>

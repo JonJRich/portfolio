@@ -1,24 +1,29 @@
-# Site settings
 title: Jon Rich
-description: Senior Product Designer
+description: "Jon Rich is a senior product designer who crafts simple solutions to complicated problems. 13 years’ design experience."
 url: "https://jonri.ch"
-baseurl: ""
 
-# Collections
+# Case-study photographs stand in as a placeholder until this is false.
+# A single project can opt out with `placeholders: false` in its front matter.
+# The real filenames stay on each project (image:) and figure (src:).
+placeholders: true
+
+permalink: /writing/:year/:month/:day/:title/
+
 collections:
   work:
     output: true
-    permalink: /work/:title/
 
-# Google Fonts
-google_fonts: "IBM+Plex+Mono:400,500,600|Quantico:400,700"
+defaults:
+  - scope:
+      path: ""
+      type: work
+    values:
+      layout: case-study
 
-# Build settings
-markdown: kramdown
-permalink: /writing/:year/:month/:day/:title/
-
-# Exclude
 exclude:
+  - vendor
   - Gemfile
   - Gemfile.lock
-  - README.md
+  - _build
+  - .bundle
+  - node_modules

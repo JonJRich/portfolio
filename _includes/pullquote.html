@@ -1,0 +1,9 @@
+<blockquote class="pullquote{% if include.lead %} pullquote--double{% endif %}">
+  {%- if include.lead %}
+  <p class="pullquote-lead">{{ include.lead }}</p>
+  {%- endif %}
+  <p>{{ include.text }}</p>
+  {%- if include.cite %}
+  <footer class="pullquote-cite">{{ include.cite }}</footer>
+  {%- endif %}
+</blockquote>

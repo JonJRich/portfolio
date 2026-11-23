@@ -1,0 +1,125 @@
+---
+layout: default
+---
+{%- if site.placeholders and page.placeholders != false -%}
+  {%- assign hero = "/assets/images/placeholder.svg" -%}
+{%- else -%}
+  {%- assign hero = page.image -%}
+{%- endif -%}
+{%- assign projects = site.work | sort: "order" -%}
+{%- assign next = nil -%}
+{%- for project in projects -%}
+  {%- if project.slug == page.related -%}{%- assign next = project -%}{%- endif -%}
+{%- endfor -%}
+<article class="case-study case-study--{{ page.case_study_type | default: 'short' }}"{% if page.ground %} style="--screen-ground: {{ page.ground }}; --ground: {{ page.ground }}"{% endif %}>
+  <svg class="z-filters" width="0" height="0" aria-hidden="true" focusable="false">
+    <defs>
+      <!-- The homepage lead card's halftone glow, inked in this project's colours for key decisions. -->
+      <filter id="z-lift-callout" x="-12%" y="-10%" width="124%" height="120%" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <feGaussianBlur in="SourceAlpha" stdDeviation="6" result="blur"></feGaussianBlur>
+        <feComposite in="blur" in2="SourceAlpha" operator="out" result="halo"></feComposite>
+        <feImage x="0" y="0" width="3" height="3" preserveAspectRatio="none" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='3' height='3'%3E%3Ccircle cx='1.5' cy='1.5' r='1.05' fill='%23fff'/%3E%3C/svg%3E" result="cell"></feImage>
+        <feTile in="cell" result="screen"></feTile>
+        <feComposite in="screen" in2="halo" operator="arithmetic" k1="2.4" k2="0" k3="0" k4="0" result="dots"></feComposite>
+        <feComponentTransfer in="dots" result="inkalpha">
+          <feFuncA type="linear" slope="1.15" intercept="-0.2"></feFuncA>
+        </feComponentTransfer>
+        <feFlood result="ink" style="flood-color: var(--callout-halftone, var(--z-halftone)); flood-opacity: 1"></feFlood>
+        <feComposite in="ink" in2="inkalpha" operator="in" result="colored"></feComposite>
+        <feMerge>
+          <feMergeNode in="colored"></feMergeNode>
+          <feMergeNode in="SourceGraphic"></feMergeNode>
+        </feMerge>
+      </filter>
+    </defs>
+  </svg>
+  <header class="case-hero">
+    <h1 class="case-title">{{ page.title }}</h1>
+    {%- if page.description %}
+    <p class="dek">{{ page.description }}</p>
+    {%- endif %}
+    <ul class="meta-row">
+      {%- if page.role %}
+      <li>
+        <span class="meta-key">Role</span>
+        <span class="meta-value">{{ page.role }}</span>
+      </li>
+      {%- endif %}
+      {%- if page.year %}
+      <li>
+        <span class="meta-key">Year</span>
+        <span class="meta-value">{{ page.year }}</span>
+      </li>
+      {%- endif %}
+      {%- if page.skills %}
+      <li>
+        <span class="meta-key">Skills</span>
+        <span class="meta-value">{{ page.skills | join: ", " }}</span>
+      </li>
+      {%- endif %}
+      {%- if page.reading_time %}
+      <li>
+        <span class="meta-key">Reading time</span>
+        <span class="meta-value">{{ page.reading_time }}</span>
+      </li>
+      {%- endif %}
+    </ul>
+    {%- if page.image %}
+    <figure class="case-hero-media">
+      {%- if site.placeholders and page.placeholders != false %}
+      <img src="{{ hero | relative_url }}" alt="" width="1600" height="900" loading="eager" fetchpriority="high" decoding="async">
+      {%- else %}
+      {% include zoom-img.html src=hero alt=page.image_alt caption=page.image_caption eager=true %}
+      {%- if page.image_caption %}
+      <figcaption>{{ page.image_caption }}</figcaption>
+      {%- endif %}
+      {%- endif %}
+    </figure>
+    {%- endif %}
+  </header>
+
+  <section class="glance" aria-labelledby="overview-heading">
+    <h2 id="overview-heading" class="section-kicker">{{ page.glance_label | default: "At a glance" }}</h2>
+    {%- if page.summary %}
+    <div class="glance-summary">
+      {{ page.summary | markdownify }}
+    </div>
+    {%- endif %}
+    {%- if page.points %}
+    <ul class="glance-points">
+      {%- for point in page.points %}
+      <li>{{ point | markdownify | remove: "<p>" | remove: "</p>" | strip }}</li>
+      {%- endfor %}
+    </ul>
+    {%- endif %}
+  </section>
+
+  <div class="case-body">
+    {{ content }}
+  </div>
+
+  {%- if next %}
+  <nav class="related" aria-labelledby="next-heading">
+    <h2 id="next-heading" class="section-kicker">Next project</h2>
+    <a class="related-link" href="{{ next.url | relative_url }}">
+      <div class="related-media">
+        <img
+          src="{% if site.placeholders and next.placeholders != false %}{{ '/assets/images/placeholder.svg' | relative_url }}{% else %}{{ next.image | relative_url }}{% endif %}"
+          alt=""
+          width="1600"
+          height="900"
+          loading="lazy"
+          decoding="async"
+        >
+      </div>
+      <div class="related-copy">
+        <p class="related-title">{{ next.title }}</p>
+        {%- if next.description %}
+        <p class="related-dek">{{ next.description }}</p>
+        {%- endif %}
+      </div>
+    </a>
+  </nav>
+  {%- endif %}
+</article>
+<script src="{{ '/assets/js/lightbox.js' | relative_url }}?v=2" defer></script>

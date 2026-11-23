@@ -1,0 +1,20 @@
+{%- comment -%}
+  Two images side by side (stacked on small screens), each with its own caption.
+  a / b: src_a, alt_a, caption_a, src_b, alt_b, caption_b.
+{%- endcomment -%}
+{%- assign ph = false -%}
+{%- if site.placeholders and page.placeholders != false -%}{%- assign ph = true -%}{%- endif -%}
+<div class="pair">
+  <figure class="pair-item">
+    {%- if ph %}{% include zoom-img.html src="/assets/images/placeholder.svg" alt="" caption=include.caption_a %}{% else %}{% include zoom-img.html src=include.src_a alt=include.alt_a caption=include.caption_a %}{% endif %}
+    {%- if include.caption_a %}
+    <figcaption>{{ include.caption_a }}</figcaption>
+    {%- endif %}
+  </figure>
+  <figure class="pair-item">
+    {%- if ph %}{% include zoom-img.html src="/assets/images/placeholder.svg" alt="" caption=include.caption_b %}{% else %}{% include zoom-img.html src=include.src_b alt=include.alt_b caption=include.caption_b %}{% endif %}
+    {%- if include.caption_b %}
+    <figcaption>{{ include.caption_b }}</figcaption>
+    {%- endif %}
+  </figure>
+</div>

@@ -2,54 +2,14 @@
 layout: default
 ---
 
-<section class="hero-section">
-  <h1 class="hero-title">From IoT to education. <br>Developers to students.<br> <span class="highlight">I build products</span> millions of people love to use. </h1>
-  <p class="hero-bio"> Right now, <span class="highlight-animate" data-delay="0">I'm Senior Product Designer at Sparx Learning,</span> creating tools that empower teachers by giving them back their time. Five and a half million students benefit when their teachers are free to teach.</br>
-    <br>
-    <span class="highlight-animate" data-delay="1">I thrive in the thick of it.</span> Fifty post-its from five different people. Conflicting priorities. Half-formed ideas. I dig in to the complexity to find the simple answer underneath.</br>
-    <br>
-    <span class="highlight-animate" data-delay="2">Over 10 years, I've moved from executing designs to shaping direction.</span> I've learned when to push back, how to advocate for users who aren't in the room, and how to keep teams moving.</br>
-</p>    
+<section class="intro-block" aria-label="Introduction">
+  <z-texture interactive
+    pattern="cumulus" ink-a="var(--z-halftone)"
+    seed="jon-uvw8, jr-4b, jr-7g, jr-1o, jr-79, jr-2a, jr-1p, jr-r, jr-i, jr-z, jr-1z, jr-1v, jr-2u" two-tone="off"
+    density="0.1" fill="1" scale="1" soft="0.19"
+    pitch="4.5" angle-a="15" shape="round" gain="1"
+    grain="0.2" mis="2"></z-texture>
+  <h1 class="intro"><span class="intro-name">Jon Rich,</span><span class="intro-rest"> is a product designer who <span class="intro-hi">crafts</span> simple <span class="intro-hi">solutions</span> to complicated problems.</span></h1>
 </section>
 
-<section id="work" class="work-section">
-  <h2 class="section-label">WORK</h2>
-  <div class="work-grid">
-    {% assign sorted_work = site.work | sort: 'date' | reverse %}
-    {% for project in sorted_work %}
-    <a href="{{ project.url | relative_url }}" class="work-card">
-      {% if project.image %}
-      <div class="work-image">
-        <img src="{{ project.image | relative_url }}" alt="{{ project.title }}">
-      </div>
-      {% endif %}
-      <div class="work-content">
-        <h3 class="work-title">{{ project.title }}</h3>
-        <p class="work-description">{{ project.description }}</p>
-        <span class="work-button">OPEN</span>
-      </div>
-    </a>
-    {% endfor %}
-  </div>
-</section>
-
-<section id="experience" class="experience-section">
-  <h2 class="section-label">EXPERIENCE</h2>
-  <div class="experience-grid">
-    <a href="https://sparx-learning.com" class="experience-item" target="_blank" rel="noopener noreferrer">
-      <h3 class="experience-company">Sparx Learning</h3>
-      <p class="experience-title">Senior Product Designer</p>
-      <p class="experience-dates">2024 - Present</p>
-    </a>
-    <a href="https://balena.io" class="experience-item" target="_blank" rel="noopener noreferrer">
-      <h3 class="experience-company">balena</h3>
-      <p class="experience-title">Senior Product Designer</p>
-      <p class="experience-dates">2022 - 2024</p>
-    </a>
-    <a href="https://harleys.agency" class="experience-item" target="_blank" rel="noopener noreferrer">
-      <h3 class="experience-company">Harleys ltd</h3>
-      <p class="experience-title">Deputy Head of Design</p>
-      <p class="experience-dates">2019 - 2022</p>
-    </a>
-  </div>
-</section>
+{% include text-home.html %}

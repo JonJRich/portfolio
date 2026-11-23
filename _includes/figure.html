@@ -1,0 +1,18 @@
+{%- comment -%}
+  src is the real photograph. While site.placeholders is true every figure
+  shows the placeholder instead, with an empty alt, matching the live site.
+  fit="natural" keeps the image's own shape instead of cropping to 16:9.
+{%- endcomment -%}
+{%- if site.placeholders and page.placeholders != false -%}
+  {%- assign src = "/assets/images/placeholder.svg" -%}
+  {%- assign alt = "" -%}
+{%- else -%}
+  {%- assign src = include.src -%}
+  {%- assign alt = include.alt -%}
+{%- endif -%}
+<figure class="figure figure--{{ include.layout | default: 'wide' }}{% if include.fit %} figure--{{ include.fit }}{% endif %}">
+  {% include zoom-img.html src=src alt=alt caption=include.caption w=include.w h=include.h %}
+  {%- if include.caption %}
+  <figcaption>{{ include.caption }}</figcaption>
+  {%- endif %}
+</figure>

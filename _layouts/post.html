@@ -1,29 +1,32 @@
 ---
 layout: default
 ---
-
-<article class="post">
-  {% if page.categories contains 'work' and page.hero_image %}
-  <div class="post-hero">
-    <img src="{{ page.hero_image | relative_url }}" alt="{{ page.title }}">
+<article class="blog-post">
+  <p class="section-kicker"><a href="{{ '/#tx-blog' | relative_url }}">Blog</a></p>
+  <div class="blog-post-grid">
+    <time class="blog-date" datetime="{{ page.date | date: '%Y-%m-%d' }}">
+      <span class="blog-day">{{ page.date | date: "%-d" }}</span>
+      <span class="blog-month">{{ page.date | date: "%b" }}</span>
+      <span class="blog-year">{{ page.date | date: "%Y" }}</span>
+    </time>
+    <header class="blog-post-head">
+      <h1>{{ page.title }}</h1>
+      <p class="reading-time">{{ page.reading_time }}</p>
+      {%- if page.description %}
+      <p class="dek">{{ page.description }}</p>
+      {%- endif %}
+    </header>
   </div>
-  {% endif %}
-
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title }}</h1>
-    <div class="post-meta">
-      <time class="post-date">{{ page.date | date: "%Y-%m-%d" }}</time>
-      {% if page.categories %}
-      <span class="post-category">{{ page.categories | join: ', ' | upcase }}</span>
-      {% endif %}
-    </div>
-  </header>
-
-  <div class="post-content">
+  {%- if page.image %}
+  <figure class="case-hero-media blog-hero">
+    {% include zoom-img.html src=page.image alt=page.image_alt caption=page.image_caption eager=true %}
+    {%- if page.image_caption %}
+    <figcaption>{{ page.image_caption }}</figcaption>
+    {%- endif %}
+  </figure>
+  {%- endif %}
+  <div class="prose blog-post-body">
     {{ content }}
   </div>
-
-  <footer class="post-footer">
-    <a href="{{ '/' | relative_url }}" class="back-link">&larr; BACK TO HOME</a>
-  </footer>
 </article>
+<script src="{{ '/assets/js/lightbox.js' | relative_url }}?v=2" defer></script>

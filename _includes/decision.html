@@ -1,0 +1,20 @@
+<aside class="decision">
+  <p class="decision-label">Design Decision {{ include.n }}</p>
+  <h3 class="decision-title">{{ include.title }}</h3>
+  <div class="decision-grid">
+    <div>
+      <h4>Problem</h4>
+      <p>{{ include.problem }}</p>
+    </div>
+    <div>
+      <h4>Solution</h4>
+      <p>{{ include.solution }}</p>
+    </div>
+  </div>
+  {%- if include.why %}
+  <p class="decision-why">
+    <span class="decision-why-label">Why it mattered</span>
+    {{ include.why }}
+  </p>
+  {%- endif %}
+</aside>

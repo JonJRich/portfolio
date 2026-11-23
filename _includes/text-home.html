@@ -1,0 +1,95 @@
+{%- comment -%}
+  The homepage: work, about, experience and notes in one column.
+{%- endcomment -%}
+{%- assign projects = site.work | sort: "order" -%}
+{%- assign total = projects | size | prepend: "0" | slice: -2, 2 -%}
+<div class="tx" id="tx">
+
+  <section class="tx-section" id="tx-work" aria-labelledby="tx-work-heading">
+    <hr class="tx-rule" data-tx>
+    <div class="tx-head">
+      <h2 id="tx-work-heading" class="section-kicker">Work</h2>
+      <p class="tx-aside tx-note" data-tx>Hand-picked highlights</p>
+    </div>
+    <ol class="tx-list">
+      {%- for project in projects %}
+      {%- assign n = forloop.index | prepend: "0" | slice: -2, 2 -%}
+      {%- assign minutes = project.reading_time | split: " " | first -%}
+      <li class="tx-item{% if forloop.first %} tx-item--lead{% endif %}" data-tx>
+        <a class="tx-row" href="{{ project.url | relative_url }}" data-preview="{% if site.placeholders and project.placeholders != false %}{{ '/assets/images/placeholder.svg' | relative_url }}{% else %}{{ project.image | relative_url }}{% endif %}">
+          <span class="tx-num" aria-hidden="true"><span data-tx-count>{{ n }}</span></span>
+          <div class="tx-copy">
+            <h3 class="tx-title">{{ project.home_title | default: project.title }}{% unless forloop.first %} <span class="tx-arrow" aria-hidden="true">&rarr;</span>{% endunless %}</h3>
+            {%- assign dek = project.home_dek | default: project.description -%}
+            {%- if dek %}
+            <p class="tx-dek">{{ dek }}</p>
+            {%- endif %}
+            <p class="tx-meta"><span><span data-tx-count>{{ minutes }}</span> min read</span>{%- for skill in project.skills %}<span>{{ skill }}</span>{%- endfor %}</p>
+            {%- if forloop.first %}
+            <p class="tx-cta">Read case study <span class="tx-arrow" aria-hidden="true">&rarr;</span></p>
+            {%- endif %}
+          </div>
+        </a>
+      </li>
+      {%- endfor %}
+    </ol>
+  </section>
+
+  <section class="tx-section" id="tx-about" aria-labelledby="tx-about-heading">
+    <hr class="tx-rule" data-tx>
+    <div class="tx-head">
+      <h2 id="tx-about-heading" class="section-kicker">About</h2>
+      <p class="tx-aside tx-note" data-tx>From publishing to product</p>
+    </div>
+    <div class="tx-about">
+      <p class="tx-lede" data-tx><span class="dropcap">I</span>’m currently a senior product designer at Sparx Learning, leading design across multiple products in their education portfolio.</p>
+      <p data-tx>Every day is different, but it almost always involves working closely with product to get under the skin of the problems we face, working shoulder to shoulder with engineers to build delightful experiences, and always staying close to the thousands of teachers and 2.5 million students who are our users.</p>
+      <p data-tx>I cut my teeth in publishing, working on the national magazine BBC Science Focus, before – via a side quest into the world of indie publishing – moving over to the world of design agencies. Over a decade I led teams to deliver work for tech clients including Ericsson, Klarna and Salesforce.</p>
+      <p data-tx>One thing was consistent: I was always the designer that ‘did digital’. Five years ago I made the move into product design, joining the team at balena at a time of rapid growth and expanding product offerings.</p>
+    </div>
+  </section>
+
+  <section class="tx-section" id="tx-experience" aria-labelledby="tx-experience-heading">
+    <hr class="tx-rule" data-tx>
+    <div class="tx-head">
+      <h2 id="tx-experience-heading" class="section-kicker">Experience</h2>
+      <p class="tx-aside tx-note" data-tx>{{ 'now' | date: '%Y' | minus: 2013 }} years in design</p>
+    </div>
+    <ol class="tx-list tx-xp-list">
+      {%- for job in site.data.experience %}
+      <li class="tx-xp" data-tx>
+        <span class="tx-xp-org">{{ job.org }}</span>
+        <span class="tx-xp-role">{{ job.role }}</span>
+        <span class="tx-leader" aria-hidden="true"></span>
+        <span class="tx-xp-when"><span data-tx-count>{{ job.start }}</span> <span class="tx-to" aria-hidden="true">&rarr;</span><span class="visually-hidden">to</span> {% if job.end == "Now" %}Now{% else %}<span data-tx-count>{{ job.end }}</span>{% endif %}</span>
+      </li>
+      {%- endfor %}
+    </ol>
+  </section>
+
+  <section class="tx-section tx-section--blog" id="tx-blog" aria-labelledby="tx-blog-heading">
+    <hr class="tx-rule" data-tx>
+    <div class="tx-head">
+      <h2 id="tx-blog-heading" class="section-kicker">Blog</h2>
+      <p class="tx-aside tx-note" data-tx>Notes on how I design</p>
+    </div>
+    <ol class="tx-list">
+      {%- for post in site.posts %}
+      {%- assign minutes = post.reading_time | split: " " | first -%}
+      <li class="tx-item" data-tx>
+        <a class="tx-row tx-row--post" href="{{ post.url | relative_url }}"{% if post.image %} data-preview="{{ post.image | relative_url }}"{% endif %}>
+          <time class="tx-date" datetime="{{ post.date | date: '%Y-%m-%d' }}"><span data-tx-count>{{ post.date | date: "%d" }}</span> {{ post.date | date: "%b" }} <span data-tx-count>{{ post.date | date: "%Y" }}</span></time>
+          <div class="tx-copy">
+            <h3 class="tx-title">{{ post.title }} <span class="tx-arrow" aria-hidden="true">&rarr;</span></h3>
+            {%- if post.description %}
+            <p class="tx-dek">{{ post.description }}</p>
+            {%- endif %}
+            <p class="tx-meta"><span><span data-tx-count>{{ minutes }}</span> min read</span></p>
+          </div>
+        </a>
+      </li>
+      {%- endfor %}
+    </ol>
+  </section>
+
+</div>

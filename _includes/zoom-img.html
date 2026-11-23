@@ -1,0 +1,8 @@
+{%- comment -%}
+  One image that opens full window when clicked (lightbox.js).
+  Pass src, alt, and optionally caption (shown in the lightbox), w, h, eager.
+{%- endcomment -%}
+<button type="button" class="zoom" data-zoom="{{ include.src | relative_url }}" data-zoom-caption="{{ include.caption | strip_html | escape }}" aria-label="Open image full window{% if include.alt %}: {{ include.alt | escape }}{% endif %}">
+  <img src="{{ include.src | relative_url }}" alt="{{ include.alt | escape }}" width="{{ include.w | default: 1600 }}" height="{{ include.h | default: 900 }}" {% if include.eager %}loading="eager" fetchpriority="high"{% else %}loading="lazy"{% endif %} decoding="async" />
+  <span class="zoom-hint" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M6 2.5H2.5V6M10 2.5h3.5V6M6 13.5H2.5V10M10 13.5h3.5V10" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+</button>

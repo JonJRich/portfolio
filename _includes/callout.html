@@ -1,0 +1,16 @@
+{%- comment -%}
+  A boxed aside inside a section. Capture the body first, then:
+  {% include callout.html label="Key decision" title="…" body=body glow=true %}
+  glow=true borrows the halftone glow from the highlighted homepage card.
+{%- endcomment -%}
+<aside class="callout{% if include.glow %} callout--glow{% endif %}">
+  {%- if include.label %}
+  <p class="callout-label">{{ include.label }}</p>
+  {%- endif %}
+  {%- if include.title %}
+  <h3 class="callout-title">{{ include.title }}</h3>
+  {%- endif %}
+  <div class="callout-body">
+    {{ include.body | markdownify }}
+  </div>
+</aside>
