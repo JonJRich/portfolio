@@ -2830,12 +2830,14 @@ html.is-webkit.tx-js[data-zine][data-layout="text"] .case-body .callout--glow.is
   text-align: right;
 }
 .cv-key { color: var(--accent-text); margin-right: 0.35em; }
-.cv-print { order: -1; flex: 0 0 100%; display: flex; justify-content: flex-end; }
-.cv-print .nav-link { cursor: pointer; font: 500 0.9375rem var(--sans); border: 0; }
 @media (max-width: 40rem) {
   .cv-contact { text-align: left; }
-  .cv-print { justify-content: flex-start; }
 }
+
+/* Header buttons: Contact, plus Save as PDF on the CV, sitting to its left. */
+.nav-actions { display: flex; align-items: center; gap: 0.5rem; }
+.nav-link--print { order: -1; cursor: pointer; border: 0; font-family: inherit; font-size: inherit; line-height: 1.3; }
+@media print { .nav-actions { display: none !important; } }
 
 .cv-section { margin-top: 2.25rem; }
 .cv-label {
