@@ -2839,6 +2839,27 @@ html.is-webkit.tx-js[data-zine][data-layout="text"] .case-body .callout--glow.is
 .nav-link--print { order: -1; cursor: pointer; border: 0; font-family: inherit; font-size: inherit; line-height: 1.3; }
 @media print { .nav-actions { display: none !important; } }
 
+/* CV: "Save as PDF" as an accent text link above the web and email lines. */
+.cv-save { margin-bottom: 0.2rem; }
+.cv-save button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: var(--accent-text);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  cursor: pointer;
+}
+.cv-save button:hover { text-decoration-thickness: 2px; }
+.cv-save button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+.cv-save svg { width: 1.05em; height: 1.05em; flex: none; }
+@media print { .cv-save { display: none !important; } }
+
 .cv-section { margin-top: 2.25rem; }
 .cv-label {
   margin: 0 0 1rem;
