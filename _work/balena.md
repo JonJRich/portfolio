@@ -82,13 +82,11 @@ That varying guidance was the real problem the design system had to solve.
 {% capture key_decision %}
 Mapping who would use the design system put front-end engineers at its centre, with the product and design teams around them. That decided what we built first: not a designer’s component library, but specifications and design tokens engineers could trust and use directly.
 
-{% include pair.html
-  src_a="/assets/images/balena-tokens-text.webp"
-  alt_a="A token table for text colours, listing variants and roles with a swatch, token name, description, CSS variable and hex value for each."
-  caption_a="Text tokens. A name, a job description, the variable to use and the value, so nobody has to guess."
-  src_b="/assets/images/balena-tokens-border.webp"
-  alt_b="A token table for border colour roles: info, success, warning and danger, each with its token, description, variable and value."
-  caption_b="Border roles for messages and states. Same format every time, straight into the code."
+{% include figure.html
+  src="/assets/images/balena-tokens-text.webp"
+  alt="A token table for text colours, listing variants and roles with a swatch, token name, description, CSS variable and hex value for each."
+  caption="Text tokens. A name, a job description, the variable to use and the value, so nobody has to guess."
+  layout="wide"
 %}
 
 We shipped the tokens as an NPM package, and the engineers were quickly on board. The design team won too: we could create and update tokens in one place and watch the change flow through the products.
@@ -129,7 +127,7 @@ design.balena.io brought UI and UX guidelines together in a single, easy-to-upda
 Underneath sat a foundation layer: a base palette of colours, from which we defined a semantic layer for each product and website. That allowed variation between touchpoints while making sure everything came from the same source. From the marketing site right through to balenaCloud.
 
 {% include pair.html
-  src_a="/assets/images/balena-3.webp"
+  src_a="/assets/images/balena-design-system.webp"
   alt_a="The base colour palette in rows of graded swatches, beside a table of status colour tokens and examples of buttons built from them."
   caption_a="The foundations. One base palette, with semantic tokens for things like status built on top."
   src_b="/assets/images/balena-token-anatomy.webp"

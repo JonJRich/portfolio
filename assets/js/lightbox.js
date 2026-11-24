@@ -12,7 +12,9 @@
   dialog.className = "lightbox";
   dialog.setAttribute("aria-label", "Image, full window");
   dialog.innerHTML =
-    '<button type="button" class="lightbox-close">Close <span aria-hidden="true">&times;</span></button>' +
+    '<button type="button" class="lightbox-close">Close' +
+      '<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 2l8 8M10 2l-8 8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>' +
+    '</button>' +
     '<figure class="lightbox-figure">' +
       '<img class="lightbox-img" alt="">' +
       '<figcaption class="lightbox-caption"></figcaption>' +

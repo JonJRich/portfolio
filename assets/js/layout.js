@@ -374,9 +374,30 @@
     preview = { hide: hide };
   }
 
+  /* A page arrives once per visit (browser tab). Coming back to it, it's all
+     there as it was left; picking a new ink still replays the arrival. */
+  function showNow() {
+    if (observer) { observer.disconnect(); observer = null; }
+    clearPending();
+    root.classList.add("tx-instant");
+    all(HEADS + "," + LABELS + "," + RISE).forEach(function (el) { el.classList.add("is-in"); });
+    settleCounts();
+    void root.offsetWidth;
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () { root.classList.remove("tx-instant"); });
+    });
+  }
+
+  var seenKey = "jr-seen:" + location.pathname, seen = false;
+  try {
+    seen = sessionStorage.getItem(seenKey) === "1";
+    sessionStorage.setItem(seenKey, "1");
+  } catch (e) {}
+
   if (isText()) {
     setUpPreview();
     startText();
+    if (seen && root.classList.contains("tx-js")) showNow();
     /* /#work, /#about and /#blog point at the classic sections */
     var hash = location.hash.replace("#", "");
     var section = hash && document.getElementById("tx-" + hash);

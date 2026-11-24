@@ -2698,6 +2698,8 @@ html.lightbox-open { overflow: hidden; }
   color: var(--text);
   cursor: pointer;
 }
+.lightbox-close { display: inline-flex; align-items: center; gap: 0.55em; }
+.lightbox-close svg { width: 0.8em; height: 0.8em; flex: none; }
 .lightbox-close:hover { background: color-mix(in srgb, var(--accent) 11%, var(--bg)); }
 .lightbox-close:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 @media (prefers-reduced-motion: reduce) {
@@ -2968,3 +2970,8 @@ html.is-webkit.tx-js[data-zine][data-layout="text"] .case-body .callout--glow.is
   .cv-label, .cv h4 { break-after: avoid; }
   .cv a { color: inherit !important; }
 }
+
+/* Returning to a page: everything is shown at once, with no arrival. */
+html.tx-instant *,
+html.tx-instant *::before,
+html.tx-instant *::after { transition: none !important; }
