@@ -2788,3 +2788,160 @@ html.is-webkit[data-zine] .nav-link:is(:hover, :focus-visible) { filter: none; }
 html.is-webkit[data-zine] .tx-item--lead .tx-row,
 html.is-webkit[data-zine] .callout--glow,
 html.is-webkit.tx-js[data-zine][data-layout="text"] .case-body .callout--glow.is-in { filter: none; }
+
+/* ==========================================================================
+   CV (/cv/): unlinked, noindex. Reads on screen, prints to A4.
+   ========================================================================== */
+
+.cv {
+  width: min(100vw - 2 * var(--gutter), 52rem);
+  margin: 0 0 0 50%;
+  transform: translateX(-50%);
+  padding-block: clamp(2.5rem, 6vw, 4.5rem) clamp(3rem, 8vw, 6rem);
+  font-size: 1rem;
+  line-height: 1.55;
+}
+.cv a { color: inherit; text-decoration: none; }
+.cv a:hover { color: var(--accent-text); }
+
+.cv-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--rule);
+}
+.cv-name { font-size: clamp(2.2rem, 1.8rem + 1.6vw, 3rem); line-height: 1; }
+.cv-role {
+  margin-top: 0.5rem;
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  color: var(--accent-text);
+}
+.cv-contact {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-family: var(--mono);
+  font-size: var(--meta);
+  line-height: 1.7;
+  text-align: right;
+}
+.cv-key { color: var(--accent-text); margin-right: 0.35em; }
+.cv-print { order: -1; flex: 0 0 100%; display: flex; justify-content: flex-end; }
+.cv-print .nav-link { cursor: pointer; font: 500 0.9375rem var(--sans); border: 0; }
+@media (max-width: 40rem) {
+  .cv-contact { text-align: left; }
+  .cv-print { justify-content: flex-start; }
+}
+
+.cv-section { margin-top: 2.25rem; }
+.cv-label {
+  margin: 0 0 1rem;
+  font-family: var(--mono);
+  font-size: var(--meta);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-text);
+}
+
+.cv-job + .cv-job { margin-top: 1.75rem; }
+.cv-job-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.25rem 1.5rem;
+  margin-bottom: 0.4rem;
+}
+.cv-job h3 { font-size: 1.3rem; }
+.cv-at { color: var(--accent-text); }
+.cv-at::before { content: "· "; color: var(--text-secondary); }
+.cv-dates {
+  font-family: var(--mono);
+  font-size: var(--meta);
+  color: var(--text-secondary);
+}
+.cv-job > p { margin-bottom: 0.6rem; }
+.cv h4 {
+  margin: 1rem 0 0.4rem;
+  font-family: var(--sans);
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+
+.cv-list { margin: 0; padding-left: 1.1em; }
+.cv-list li { margin-bottom: 0.4em; padding-left: 0.15em; }
+.cv-list li::marker { color: var(--accent-text); }
+@media (min-width: 46rem) {
+  .cv-list--cols { columns: 2; column-gap: 2.25rem; }
+  .cv-list--cols li { break-inside: avoid; }
+}
+
+.cv-edu {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: 0.75rem 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.cv-edu strong { display: block; font-weight: 600; }
+
+/* The CV sits in a one-cell table so that, in print, its header (thead)
+   repeats at the top of every page. On screen the table is just blocks. */
+.cv-sheet, .cv-sheet > thead, .cv-sheet > tbody, .cv-sheet tr, .cv-sheet td { display: block; }
+.cv-sheet { width: 100%; border-collapse: collapse; }
+.cv-sheet td { padding: 0; }
+.cv-block { margin-top: 0; }
+
+@media print {
+  @page { size: A4; margin: 11mm 15mm 13mm; }
+  html, body {
+    background: #fff !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    font-size: 9.6pt;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .site-header, .site-footer, .skip-link, .cv-print, .tx-preview, z-texture { display: none !important; }
+  main.wrap { width: auto !important; max-width: none !important; padding: 0 !important; margin: 0 !important; }
+  .cv { width: auto; max-width: none; margin: 0; transform: none; padding: 0; font-size: 9.6pt; line-height: 1.45; }
+
+  /* the header repeats on every page, kept compact */
+  .cv-sheet { display: table; }
+  .cv-sheet > thead { display: table-header-group; }
+  .cv-sheet > tbody { display: table-row-group; }
+  .cv-sheet tr { display: table-row; }
+  .cv-sheet td { display: table-cell; }
+  .cv-sheet > thead td { padding-bottom: 9pt; }
+  .cv-head { align-items: center; padding-bottom: 7pt; }
+  .cv-name { font-size: 18pt; }
+  .cv-role { font-size: 11pt; margin-top: 2pt; }
+  .cv-contact { font-size: 8pt; line-height: 1.6; }
+
+  .cv-section { margin-top: 11pt; }
+  .cv-sheet > tbody .cv-section:first-child { margin-top: 0; }
+  .cv-label { margin-bottom: 5pt; font-size: 8pt; }
+  .cv-job + .cv-job { margin-top: 9pt; }
+  .cv-job h3 { font-size: 11pt; }
+  .cv-dates { font-size: 8pt; }
+  .cv h4 { margin: 6pt 0 3pt; font-size: 9.6pt; }
+
+  /* two balanced columns, each flowing on its own (no row gaps); the list as a
+     whole never breaks across pages, so a column can't spill over */
+  .cv-list--cols { columns: 2; column-gap: 9mm; break-inside: avoid; }
+  .cv-list li { margin-bottom: 2.5pt; }
+
+  /* page breaks fall between blocks: a job's heading and intro, a project group,
+     a short role, skills, education. Never inside one. */
+  .cv-block, .cv-job-head, .cv-list li, .cv-edu, .cv-job:not(:first-child),
+  .cv-section:has(> .cv-list), .cv-section:has(> .cv-edu) { break-inside: avoid; }
+  .cv-job-head, .cv-job > p:first-of-type { break-after: avoid; }
+  .cv-label, .cv h4 { break-after: avoid; }
+  .cv a { color: inherit !important; }
+}
