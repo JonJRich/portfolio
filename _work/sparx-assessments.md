@@ -4,6 +4,8 @@ title: "GCSEs are a big deal, teachers go the extra mile, so did we"
 description: "I led the design of a national benchmarking dashboard for GCSE mocks, giving teachers the data they need to make confident decisions, backed by a user experience shaped by weekly testing."
 home_title: "Empowering teachers through data"
 home_dek: "Designing a platform for schools to enter and assess their key GCSE mock data, with 53,965 students’ marks entered for the first national mock."
+product: "Sparx Assessments"
+product_icon: /assets/images/icons/sparx-assessments.png
 permalink: /work/sparx-assessments/
 case_study_type: long
 featured: true

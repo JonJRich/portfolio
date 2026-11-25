@@ -2975,3 +2975,49 @@ html.is-webkit.tx-js[data-zine][data-layout="text"] .case-body .callout--glow.is
 html.tx-instant *,
 html.tx-instant *::before,
 html.tx-instant *::after { transition: none !important; }
+
+/* Product label above case study titles (homepage cards and case study pages). */
+.product-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  margin: 0 0 0.45rem;
+  font-family: var(--mono);
+  font-size: var(--meta);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  line-height: 1.3;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+/* Icons print in the reader's ink: the logo, in greys, is screened over the
+   accent, so dark parts take the ink and light parts stay light. Hovering
+   the card or row shows the real logo. */
+.product-icon {
+  position: relative;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  flex: none;
+  overflow: hidden;
+  border-radius: 4px;
+  background: var(--accent);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--text) 10%, transparent);
+  isolation: isolate;
+}
+.product-icon img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: none;
+  filter: grayscale(1) brightness(0.8) contrast(1.35);
+  mix-blend-mode: screen;
+  transition: filter var(--t-slow) var(--ease);
+}
+:is(.tx-row, .tx-xp):hover .product-icon { background: transparent; }   /* no ink showing through transparent logos */
+:is(.tx-row, .tx-xp):hover .product-icon img { filter: none; mix-blend-mode: normal; }
+.case-product { margin-bottom: 1rem; }
+
+/* Employer icons in Experience, same treatment as the product labels. */
+.tx-xp-org { display: inline-flex; align-items: center; gap: 0.55em; }
+.xp-icon { transform: translateY(1px); }

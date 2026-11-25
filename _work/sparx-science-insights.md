@@ -3,6 +3,8 @@ layout: case-study
 title: "Class-level insights when every student’s experience is unique"
 description: "I led the discovery and design of a reimagined Insights page that took the results of personalised homeworks and gave teachers a class-level overview of where they excelled and where they struggled."
 home_dek: "Working with education leads to take a homework Insights page that offered little real insight and make it part of teachers’ weekly routine, with weekly reach up from 22% to 30%."
+product: "Sparx Science"
+product_icon: /assets/images/icons/sparx-science.png
 permalink: /work/sparx-science-insights/
 case_study_type: long
 featured: false

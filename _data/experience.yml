@@ -1,21 +1,26 @@
 # From Jon's CV (Nov 2026). Years only on the homepage.
 - org: Sparx Learning
+  icon: /assets/images/icons/sparx-learning.png
   role: Senior Product Designer
   start: "2024"
   end: Now
 - org: balena
+  icon: /assets/images/icons/balena.png
   role: Senior Product Designer
   start: "2021"
   end: "2024"
 - org: Harleys Global
+  icon: /assets/images/icons/harleys.png
   role: Deputy Head of Design
   start: "2017"
   end: "2021"
 - org: Specialist
+  icon: /assets/images/icons/specialist.png
   role: Creative Designer
   start: "2015"
   end: "2017"
 - org: BBC Science Focus
+  icon: /assets/images/icons/science-focus.png
   role: Designer & Acting Art Editor
   start: "2013"
   end: "2015"

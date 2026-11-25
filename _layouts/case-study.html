@@ -34,6 +34,7 @@ layout: default
     </defs>
   </svg>
   <header class="case-hero">
+    {% include product.html item=page class="case-product" %}
     <h1 class="case-title">{{ page.title }}</h1>
     {%- if page.description %}
     <p class="dek">{{ page.description }}</p>

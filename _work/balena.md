@@ -4,6 +4,8 @@ title: "2 sets of guidelines is worse than none"
 description: "I led the design and implementation of balena’s token-based design system, giving engineers, product and marketing one trusted source of truth while the business grew fast."
 home_title: "Shoring up the design of a rapidly scaling product"
 home_dek: "Bringing design order and consistency to a product growing 25% year on year, which hit 10 million ARR while I was there."
+product: "balenaCloud"
+product_icon: /assets/images/icons/balenacloud.png
 permalink: /work/balena/
 case_study_type: long
 featured: false

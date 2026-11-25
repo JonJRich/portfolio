@@ -1,0 +1,10 @@
+{%- comment -%}
+  The product a case study is about, as a small label: icon (optional) + name.
+  Pass item (a work page) and class.
+{%- endcomment -%}
+{%- if include.item.product -%}
+<p class="product-label {{ include.class }}">
+  {%- if include.item.product_icon %}<span class="product-icon"><img src="{{ include.item.product_icon | relative_url }}" alt="" width="16" height="16"></span>{% endif -%}
+  <span>{{ include.item.product }}</span>
+</p>
+{%- endif -%}
